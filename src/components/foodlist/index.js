@@ -1,9 +1,19 @@
 import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient'
+import { useNavigation } from '@react-navigation/native'
 
 export function FoodList({ data }) {
+  const navigation = useNavigation()
+
+  function handleNavigate() {
+    navigation.navigate('Detail')
+  }
   return (
-    <TouchableOpacity activeOpacity={0.7} style={styles.container}>
+    <TouchableOpacity
+      activeOpacity={0.7}
+      style={styles.container}
+      onPress={handleNavigate}
+    >
       <Image source={{ uri: data.cover }} style={styles.cover} />
       <View style={styles.info}>
         <Text style={styles.name}>{data.name}</Text>
