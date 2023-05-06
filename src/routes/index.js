@@ -20,7 +20,7 @@ export function Routes() {
         //Para mudar a cor quando estiver ativa
         tabBarActiveTintColor: '#121212',
         tabBarStyle: {
-          backgroundColor: 'fff',
+          backgroundColor: '#fff',
           borderTopWidth: 0
         }
       }}
