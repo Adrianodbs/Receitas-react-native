@@ -10,6 +10,8 @@ import {
 import { useRoute, useNavigation } from '@react-navigation/native'
 
 import { Entypo, AntDesign, Feather } from '@expo/vector-icons'
+import { Ingredients } from '../../components/ingredients'
+import { Instructions } from '../../components/instructions'
 
 export function Detail() {
   const route = useRoute()
@@ -50,6 +52,10 @@ export function Detail() {
           <Feather name="share-2" size={24} color="#121212" />
         </Pressable>
       </View>
+      {route.params?.data.ingredients.map(item => (
+        <Ingredients key={item.id} data={item} />
+      ))}
+      <Instructions />
     </ScrollView>
   )
 }
